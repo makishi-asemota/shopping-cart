@@ -6,7 +6,7 @@ export default function Nav() {
   return (
     <nav>
       <ul>
-        <Link to={"/Home"}>
+        <Link to={"/"}>
           <li>Home</li>
         </Link>
         <Link to={"/Shop"}>
