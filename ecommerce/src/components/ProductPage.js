@@ -1,18 +1,29 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { ProductData } from "./ProductImages";
+import { Link } from "react-router-dom";
 
 export default function ProductPage() {
   const { id } = useParams();
-  const eachProduct = Object.keys(ProductData).map((key) => );
-  const thisProduct = eachProduct.find((prod) => prod.id === id);
+  const thisProduct = ProductData.find((prod) => {
+    return prod.id == id;
+  });
   console.log(thisProduct);
-  console.log(typeof ProductData);
+
+  function handleClick() {}
 
   return (
     <div>
-      <p>Hello from product {id} </p>
-      <p></p>
+      <div className="product-container">
+        <img
+          src={thisProduct.src}
+          className="product-image"
+          alt={thisProduct.name}
+        ></img>
+        <p className="product-name">{thisProduct.name}</p>
+        <p className="product-description">{thisProduct.description}</p>
+      </div>
+      <button>Add to Cart</button>
     </div>
   );
 }
