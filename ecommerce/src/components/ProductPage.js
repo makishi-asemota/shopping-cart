@@ -1,15 +1,18 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { ProductData } from "./ProductImage";
+import { ProductData } from "./ProductImages";
 
 export default function ProductPage() {
-  const { productId } = useParams();
-  const thisProduct = ProductData.find((prod) => prod.id === productId);
+  const { id } = useParams();
+  const eachProduct = Object.keys(ProductData).map((key) => );
+  const thisProduct = eachProduct.find((prod) => prod.id === id);
   console.log(thisProduct);
+  console.log(typeof ProductData);
 
   return (
     <div>
-      <p>Hello from product {thisProduct.id}</p>
+      <p>Hello from product {id} </p>
+      <p></p>
     </div>
   );
 }

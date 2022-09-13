@@ -1,4 +1,4 @@
-import { ProductData } from "./ProductImage";
+import { ProductData } from "./ProductImages";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
