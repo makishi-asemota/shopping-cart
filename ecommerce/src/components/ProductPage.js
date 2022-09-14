@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ProductData } from "./ProductImages";
 import { Link } from "react-router-dom";
@@ -8,9 +8,11 @@ export default function ProductPage() {
   const thisProduct = ProductData.find((prod) => {
     return prod.id == id;
   });
-  console.log(thisProduct);
 
-  function handleClick() {}
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (el) => setCart([...cart, el]);
+  console.log(cart);
 
   return (
     <div>
@@ -23,7 +25,9 @@ export default function ProductPage() {
         <p className="product-name">{thisProduct.name}</p>
         <p className="product-description">{thisProduct.description}</p>
       </div>
-      <button>Add to Cart</button>
+      <button type="submit" onClick={() => addToCart(thisProduct)}>
+        Add to Cart
+      </button>
     </div>
   );
 }

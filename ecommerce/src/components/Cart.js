@@ -1,7 +1,12 @@
+import React from "react";
+import { ProductPage } from "./ProductPage";
+
 export default function Cart() {
-  return (
-    <div>
-      <h1>Hello from Cart</h1>
-    </div>
-  );
+  const cartItems = cart.map((el) => {
+    return (
+      <div key={el.id}>
+        <img src={el.src} alt="product" className="product-image"></img>
+      </div>
+    );
+  });
 }
