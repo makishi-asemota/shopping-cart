@@ -1,18 +1,31 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ProductData } from "./ProductImages";
-import { Link } from "react-router-dom";
+import CartItems from "./CartItems";
 
-export default function ProductPage() {
+export default function ProductPage({ setCart, cart }) {
   const { id } = useParams();
   const thisProduct = ProductData.find((prod) => {
     return prod.id == id;
   });
 
-  const [cart, setCart] = useState([]);
+  // const [cart, setCart] = useState([]);
 
-  const addToCart = (el) => setCart([...cart, el]);
-  console.log(cart);
+  const addToCart = (product) => {
+    let newCart = [...cart];
+    let itemInCart = newCart.find((item) => product.name === item.name);
+    if (itemInCart) {
+      itemInCart.quantity++;
+    } else {
+      itemInCart = {
+        ...product,
+        quantity: 1,
+      };
+      newCart.push(itemInCart);
+    }
+    setCart(newCart);
+  };
+  // console.log(cart);
 
   return (
     <div>
