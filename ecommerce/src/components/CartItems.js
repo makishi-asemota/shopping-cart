@@ -7,9 +7,9 @@ export default function CartItems({ cart, setCart }) {
   };
   return (
     <>
-      <h1>Cart</h1>
+      <h1 className="cart-title">Cart</h1>
       {cart.map((product, idx) => (
-        <div key={idx} className="product-card">
+        <div key={idx} className="cart-item">
           <div className="photo">
             <img
               src={product.src}

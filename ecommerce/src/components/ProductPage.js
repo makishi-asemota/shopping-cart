@@ -9,17 +9,12 @@ export default function ProductPage({ setCart, cart }) {
     return prod.id == id;
   });
 
-  // const [cart, setCart] = useState([]);
-
   const addToCart = (product) => {
     let newCart = [...cart];
     let itemInCart = newCart.find((item) => product.name === item.name);
-    if (itemInCart) {
-      itemInCart.quantity++;
-    } else {
+    if (!itemInCart) {
       itemInCart = {
         ...product,
-        quantity: 1,
       };
       newCart.push(itemInCart);
     }
