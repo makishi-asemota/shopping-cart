@@ -115,6 +115,10 @@ button {
   font-size: large;
 }
 
+.add-message {
+  font-weight: bold;
+}
+
 .cart-title {
   display: flex;
   justify-content: center;
