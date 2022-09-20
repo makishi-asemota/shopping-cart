@@ -20,22 +20,21 @@ export default function ProductPage({ setCart, cart }) {
     }
     setCart(newCart);
   };
-  // console.log(cart);
 
   return (
     <div>
       <div className="product-container">
         <img
           src={thisProduct.src}
-          className="product-image"
+          className="product-page-image"
           alt={thisProduct.name}
         ></img>
         <p className="product-name">{thisProduct.name}</p>
         <p className="product-description">{thisProduct.description}</p>
+        <button type="submit" onClick={() => addToCart(thisProduct)}>
+          Add to Cart
+        </button>
       </div>
-      <button type="submit" onClick={() => addToCart(thisProduct)}>
-        Add to Cart
-      </button>
     </div>
   );
 }
