@@ -6,20 +6,18 @@ export default function CartItems({ cart, setCart }) {
     setCart(cart.filter((product) => product !== productToRemove));
   };
 
-  const [message, setMessage] = useState(false);
-
-  if (cart.length === 0) {
-    setMessage(true);
-  } else {
-    setMessage(false);
+  function emptyMessage() {
+    if (cart.length === 0) {
+      return { __html: "Nothing to see here" };
+    } else {
+      return { __html: "" };
+    }
   }
 
   return (
     <>
       <h1 className="cart-title">Cart</h1>
-      <h3 style={{ display: message ? "block" : "none" }}>
-        Nothing to see here
-      </h3>
+      <p className="cart-message" dangerouslySetInnerHTML={emptyMessage()}></p>
       <div className="cart-container">
         {cart.map((product, idx) => (
           <div key={idx} className="cart-item">
