@@ -1,58 +1,66 @@
 export const ProductData = [
   {
     id: 1,
-    name: "two-tone balaclava",
-    src: require("./img/product1.jpg"),
+    name: "Cobweb Bucket Hat",
+    src: require("./img/bucket1.jpg"),
     description:
-      "Made with a mix of soft chunky and velvet yarn, this balaclava is made from 100% polyester.",
+      "Welcome the theme of Halloween early with this addition to your hat collection. Handmade webs with genuine feel, made with 100% cotton.",
+    price: 40,
   },
   {
     id: 2,
-    name: "flame balaclava",
-    src: require("./img/product2.JPG"),
+    name: "Purple Dream Bucket Hat",
+    src: require("./img/bucket2.jpg"),
     description:
-      "Made with 100% wool, this flame balaclava will surely keep you warm all year round.",
+      "Colorful and vibrant, this bucket hat will bring life to any outfit you wear (preferably purple). Made with 100% cotton.",
+    price: 40,
   },
   {
     id: 3,
-    name: "cobweb balaclava",
-    src: require("./img/product3.jpg"),
+    name: "Scattered Bucket Hat",
+    src: require("./img/bucket3.jpg"),
     description:
-      "Made with 100% wool, this balclava gives off the spirit of halloween, more colorways available soon.",
+      "Don't know what to wear to accent your already cool fit? Try this colorful bucket hat, it'll match with maybe most clothes in your closet. Made with 100% cotton.",
+    price: 40,
   },
   {
     id: 4,
-    name: "gradient bucket hat",
-    src: require("./img/product4.jpg"),
+    name: "Autumn Wind Bucket Hat",
+    src: require("./img/bucket4.jpg"),
     description:
-      "This 100% cotton bucket hat is lightweight and perfect for all times of the year, while also being visually appealing.",
+      "Need some orange in your life but also want the colors of vibrant ocean waves? Introducing the Autumn Wind Bucket Hat, made with 100% cotton and vibrant enough to brighten any outfit.",
+    price: 40,
   },
   {
     id: 5,
-    name: "cloud balaclava",
-    src: require("./img/product5.jpg"),
+    name: "Granny Square Bucket Hat",
+    src: require("./img/bucket5.jpg"),
     description:
-      "This 100% polyester balaclava is warm enough for even the coldest of winter days.",
+      "Maybe you can't really decide on a color and you are ok with having a bit of everyting. This granny square bucket hat is prefect for your needs. Made with 100% cotton.",
+    price: 40,
   },
   {
     id: 6,
-    name: "flame bucket hat",
-    src: require("./img/product6.jpg"),
+    name: "Yellow Crayon Bucket Hat",
+    src: require("./img/bucket6.jpg"),
     description:
-      "Embrace the flame with this 100% cotton flame bucket hat that will surely protect you from the harsh rays of the sun.",
+      "The sun gives us life and prosperity. Maybe you like sunny days or just want to add some yellow swagger to your fit, anyway this bucket hat is for you. Made with 100% cotton.",
+    price: 40,
   },
   {
     id: 7,
-    name: "red sunset bucket hat",
-    src: require("./img/product7.JPG"),
+    name: "Loopy Balaclava",
+    src: require("./img/balaclava1.jpg"),
     description:
-      "Made with 50% cotton and 50% polyester this wide brim bucket hat provides a beautiful gradient outline alongside with a unique texture.",
+      "Sometimes running out of yarn can be a good thing, it helps create ideas like this loopy balaclava. Made with multiple strands of intertwined 100% wool, this balaclava is sure to keep you warm with style.",
+    price: 90,
   },
   {
     id: 8,
-    name: "custom rug",
-    src: require("./img/product8.jpg"),
+    name: "Cobweb Balaclava",
+    src: require("./img/balaclava2.jpg"),
     description:
-      "Outlined with the silouette of 'her' this custom portrait rug is made of 100% polyester and soft to the touch.",
+      "Spiderwebs are cool, except for the sticky part. This balaclava is exactly that! You may have a thing for spiders and this is for you. Made with 100% wool.",
+    price: 90,
   },
 ];

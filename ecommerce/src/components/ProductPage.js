@@ -43,7 +43,10 @@ export default function ProductPage({ setCart, cart }) {
           className="product-page-image"
           alt={thisProduct.name}
         ></img>
-        <p className="product-name">{thisProduct.name}</p>
+        <div className="product-name">
+          <p>{thisProduct.name}</p>
+          <p>${thisProduct.price}</p>
+        </div>
         <p className="product-description">{thisProduct.description}</p>
         <button
           type="submit"

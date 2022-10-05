@@ -14,10 +14,26 @@ export default function CartItems({ cart, setCart }) {
     }
   }
 
+  function getTotal() {
+    return cart.reduce((sum, { price }) => sum + price, 0);
+  }
+
   return (
     <>
       <h1 className="cart-title">Cart</h1>
       <p className="cart-message" dangerouslySetInnerHTML={emptyMessage()}></p>
+      <div className="cart-total-container">
+        <div className="cart-total">
+          {cart.map((product, idx) => (
+            <div key={idx}>
+              <p>
+                {product.name} ${product.price}
+              </p>
+            </div>
+          ))}
+          <p>Total: ${getTotal()}</p>
+        </div>
+      </div>
       <div className="cart-container">
         {cart.map((product, idx) => (
           <div key={idx} className="cart-item">
