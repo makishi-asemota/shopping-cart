@@ -22,33 +22,20 @@ export default function CartItems({ cart, setCart }) {
     <>
       <h1 className="cart-title">Cart</h1>
       <p className="cart-message" dangerouslySetInnerHTML={emptyMessage()}></p>
-      <div className="cart-total-container">
-        <div className="cart-total">
-          {cart.map((product, idx) => (
-            <div key={idx}>
-              <p>
-                {product.name} ${product.price}
-              </p>
-            </div>
-          ))}
-          <p>Total: ${getTotal()}</p>
-        </div>
-      </div>
       <div className="cart-container">
         {cart.map((product, idx) => (
           <div key={idx} className="cart-item">
             <div className="photo">
-              <img
-                src={product.src}
-                alt="product"
-                className="product-image"
-              ></img>
+              <img src={product.src} alt="product" className="cart-image"></img>
             </div>
-            <div className="cart-item-name">{product.name}</div>
+            <div className="cart-item-name">
+              {product.name} ${product.price}
+            </div>
             <button onClick={() => removeFromCart(product)}>Remove</button>
           </div>
         ))}
       </div>
+      <div className="cart-total">Total: ${getTotal()}</div>
     </>
   );
 }
