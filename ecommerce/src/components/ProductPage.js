@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ProductData } from "./ProductImages";
-import CartItems from "./CartItems";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Modal from "react-bootstrap/Modal";
+import "bootstrap/dist/css/bootstrap.css";
 
 export default function ProductPage({ setCart, cart }) {
   const { id } = useParams();
@@ -21,12 +24,18 @@ export default function ProductPage({ setCart, cart }) {
     setCart(newCart);
   };
 
+  const removeFromCart = (productToRemove) => {
+    setCart(cart.filter((product) => product !== productToRemove));
+  };
   const [message, setMessage] = useState(false);
 
+  const [button, setButton] = useState(false);
+
   const addMessage = (product) => {
+    setButton(true);
     let itemInCart = cart.find((item) => product.name === item.name);
-    if (itemInCart) {
-      alert("Item already in cart. Only one of each item available.");
+    if (itemInCart && button === true) {
+      removeFromCart(product);
     } else {
       setMessage(true);
       setTimeout(function () {
@@ -36,34 +45,30 @@ export default function ProductPage({ setCart, cart }) {
   };
 
   return (
-    <div>
-      <div className="product-container">
-        <img
-          src={thisProduct.src}
-          className="product-page-image"
-          alt={thisProduct.name}
-        ></img>
-        <div className="product-name">
-          <p>{thisProduct.name}</p>
-          <p>${thisProduct.price}</p>
-        </div>
-        <p className="product-description">{thisProduct.description}</p>
-        <button
-          type="submit"
-          onClick={() => {
-            addToCart(thisProduct);
-            addMessage(thisProduct);
-          }}
-        >
-          Add to Cart
-        </button>
-        <p
-          className="add-message"
-          style={{ display: message ? "block" : "none" }}
-        >
-          Added to Cart!
-        </p>
-      </div>
+    <div className="productCard">
+      <Card style={{ width: "35%" }}>
+        <Card.Img variant="top" src={thisProduct.src}></Card.Img>
+        <Card.Body>
+          <div className="cardTitle">
+            <Card.Title style={{ color: "lightblue" }}>
+              {thisProduct.name}
+            </Card.Title>
+            <Card.Subtitle className="mb-2">${thisProduct.price}</Card.Subtitle>
+          </div>
+          <Card.Text>{thisProduct.description}</Card.Text>
+          <div className="addToCart">
+            <Button
+              variant={button ? "danger" : "primary"}
+              onClick={() => {
+                button ? setButton(false) : addMessage(thisProduct);
+                addToCart(thisProduct);
+              }}
+            >
+              {button ? "Remove" : "Add to Cart"}
+            </Button>
+          </div>
+        </Card.Body>
+      </Card>
     </div>
   );
 }

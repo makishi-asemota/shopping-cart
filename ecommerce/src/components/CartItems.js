@@ -20,6 +20,7 @@ export default function CartItems({ cart, setCart }) {
 
   return (
     <>
+      {console.log(cart)}
       <h1 className="cart-title">Cart</h1>
       <p className="cart-message" dangerouslySetInnerHTML={emptyMessage()}></p>
       <div className="cart-container">
