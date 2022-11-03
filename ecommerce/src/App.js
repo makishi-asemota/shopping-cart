@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { React, useState } from "react";
 import Home from "./components/Home";
-import Nav from "./components/Nav";
+import MenuBar from "./components/MenuBar";
 import CartItems from "./components/CartItems";
 import Shop from "./components/Shop";
 import ProductPage from "./components/ProductPage";
@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Nav cart={cart} />
+        <MenuBar cart={cart} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
