@@ -9,16 +9,14 @@ export default function Shop() {
   const Products = ProductData.map((product) => {
     return (
       <div key={product.id}>
-        <Card style={{ width: "20rem" }}>
+        <Card className="shopCard">
           <Card.Img variant="top" src={product.src} />
-          <Card.Body className="cardBody">
-            <Card.Title
-              style={{ backgroundColor: "whitesmoke", color: "black" }}
-            >
+          <Card.Body className="cardBody bg-warning">
+            <Card.Title style={{ color: "black" }} className="bg-warning">
               {product.name}
             </Card.Title>
             <Card.Subtitle
-              className="mb-2 text-muted"
+              className="mb-2 text-muted bg-warning"
               style={{ backgroundColor: "white" }}
             >
               ${product.price}

@@ -11,7 +11,6 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
-    // setCart([...cart, { ...product }]);
     let newCart = [...cart];
     let itemInCart = newCart.find((item) => product.name === item.name);
     if (!itemInCart) {
@@ -38,6 +37,7 @@ function App() {
             path="/shop/:id"
             element={
               <ProductPage
+                cart={cart}
                 removeFromCart={removeFromCart}
                 addToCart={addToCart}
               />

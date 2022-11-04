@@ -11,7 +11,7 @@ export default function Home() {
             alt="makishimota"
             className="rounded home-image"
           />
-          <h1 className="cover-heading"> What is Makishimota?</h1>
+          <h1 className="cover-heading text-warning"> What is Makishimota?</h1>
           <p className="lead">
             Makishimota is a brand developed in January 2022 by Makishi Asemota.
             With the intention to develop his own clothing brand, Makishi began
@@ -21,7 +21,7 @@ export default function Home() {
             quality.
           </p>
           <a href="/shop">
-            <Button variant="light">Shop now</Button>{" "}
+            <Button variant="warning">Shop now</Button>{" "}
           </a>
         </div>
       </div>
