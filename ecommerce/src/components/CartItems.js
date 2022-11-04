@@ -28,12 +28,25 @@ export default function CartItems({ cart, removeFromCart }) {
             lg={4}
             className="d-flex flex-column align-items-center itemTotal"
           >
-            <h1 className="cart-title">Cart</h1>
-            <p
-              className="cart-message"
-              dangerouslySetInnerHTML={emptyMessage()}
-            ></p>
-            <div className="cart-total">Total: ${getTotal()}</div>
+            <div className="card text-white bg-warning mb-3">
+              <div className="card-header">Cart</div>
+              <div className="card-body">
+                <h5 className="card-title">Total: ${getTotal()}</h5>
+                <p
+                  className="card-text"
+                  dangerouslySetInnerHTML={emptyMessage()}
+                ></p>
+              </div>
+            </div>
+
+            {/* <div className="border border-warning">
+              <h1 className="cart-title">Cart</h1>
+              <p
+                className="cart-message"
+                dangerouslySetInnerHTML={emptyMessage()}
+              ></p>
+              <div className="cart-total"></div>
+            </div> */}
           </Col>
 
           <Col sm={8} lg={8} className="cartItems">

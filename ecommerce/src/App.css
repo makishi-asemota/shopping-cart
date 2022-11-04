@@ -50,6 +50,13 @@ button {
   row-gap: 3em;
 }
 
+.productPrice {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 5%;
+}
+
 @media (max-width: 600px) {
   .shop-container {
     display: flex;
@@ -75,12 +82,25 @@ button {
   justify-content: center;
 }
 
-.productCard {
+.productCardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 6%;
+}
+
+.productCardBody {
+  text-align: center;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  padding: 5%;
+}
+
+.productCard {
+  width: 80%;
 }
 
 .itemTotal {
@@ -89,4 +109,10 @@ button {
 
 .cartItems {
   padding-top: 5%;
+}
+
+.card-header {
+  text-align: center;
+  font-weight: bold;
+  color: black;
 }

@@ -9,7 +9,7 @@ export default function Shop() {
   const Products = ProductData.map((product) => {
     return (
       <div key={product.id}>
-        <Card className="shopCard">
+        <Card className="shopCard border border-warning">
           <Card.Img variant="top" src={product.src} />
           <Card.Body className="cardBody bg-warning">
             <Card.Title style={{ color: "black" }} className="bg-warning">

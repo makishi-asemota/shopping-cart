@@ -26,24 +26,25 @@ export default function ProductPage({ cart, addToCart, removeFromCart }) {
   };
 
   return (
-    <>
-      <div className="productCard">
-        <Card style={{ width: "50%" }}>
-          <Card.Img variant="top" src={thisProduct.src}></Card.Img>
-          <Card.Body>
-            <div className="cardTitle">
-              <Card.Title style={{ color: "lightblue" }}>
-                {thisProduct.name}
-              </Card.Title>
-              <Card.Subtitle className="mb-2">
-                ${thisProduct.price}
-              </Card.Subtitle>
-            </div>
-            <Card.Text>{thisProduct.description}</Card.Text>
-            <div className="addToCart">
+    <div className="productCardContainer">
+      <div className="card mb-3 border border-warning productCard">
+        <div className="row g-0">
+          <div className="col-md-4">
+            <img
+              src={thisProduct.src}
+              class="img-fluid rounded-start"
+              alt={thisProduct.name}
+            ></img>
+          </div>
+          <div className="col-md-8">
+            <div className="card-body productCardBody">
+              <div className="productPrice">
+                <h5 className="card-title text-warning">{thisProduct.name}</h5>
+                <h5 className="card-title ">${thisProduct.price}</h5>
+              </div>
+              <p className="card-text">{thisProduct.description}</p>
               <Button
                 variant="primary"
-                type="submit"
                 onClick={() => {
                   addToCart(thisProduct);
                   addMessage(thisProduct);
@@ -51,11 +52,10 @@ export default function ProductPage({ cart, addToCart, removeFromCart }) {
               >
                 Add to Cart
               </Button>
-              <p>{message ? "Added to Cart!" : ""}</p>
             </div>
-          </Card.Body>
-        </Card>
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
