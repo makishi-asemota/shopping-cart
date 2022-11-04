@@ -2,6 +2,7 @@ import { ProductData } from "./ProductImages";
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 
 export default function Shop() {
@@ -22,9 +23,9 @@ export default function Shop() {
             >
               ${product.price}
             </Card.Subtitle>
-            <a href={`/shop/${product.id}`}>
+            <Link to={`/shop/${product.id}`}>
               <Button variant="dark">Details</Button>{" "}
-            </a>
+            </Link>
           </Card.Body>
           <div className="name"></div>
         </Card>

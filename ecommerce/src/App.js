@@ -9,6 +9,24 @@ import "./App.css";
 
 function App() {
   const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    // setCart([...cart, { ...product }]);
+    let newCart = [...cart];
+    let itemInCart = newCart.find((item) => product.name === item.name);
+    if (!itemInCart) {
+      itemInCart = {
+        ...product,
+      };
+      newCart.push(itemInCart);
+    }
+    setCart(newCart);
+  };
+
+  const removeFromCart = (productToRemove) => {
+    setCart(cart.filter((product) => product !== productToRemove));
+  };
+
   return (
     <div>
       <BrowserRouter>
@@ -18,11 +36,16 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route
             path="/shop/:id"
-            element={<ProductPage cart={cart} setCart={setCart} />}
+            element={
+              <ProductPage
+                removeFromCart={removeFromCart}
+                addToCart={addToCart}
+              />
+            }
           />
           <Route
             path="/cart"
-            element={<CartItems cart={cart} setCart={setCart} />}
+            element={<CartItems cart={cart} removeFromCart={removeFromCart} />}
           />
         </Routes>
       </BrowserRouter>

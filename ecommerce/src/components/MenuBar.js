@@ -9,11 +9,19 @@ export default function navBar({ cart }) {
   return (
     <Navbar variant="dark">
       <Container>
-        <Navbar.Brand href="/">Makishimota</Navbar.Brand>
+        <Link to={"/"} style={{ textDecoration: "none" }}>
+          <Navbar.Brand href="/">Makishimota</Navbar.Brand>
+        </Link>
         <Nav className="me-auto">
-          <Nav.Link href="/">About</Nav.Link>
-          <Nav.Link href="/Shop">Store</Nav.Link>
-          <Nav.Link href="/Cart">Cart({cart.length})</Nav.Link>
+          <Link to={"/"} style={{ textDecoration: "none" }}>
+            <Nav.Link href="/">About</Nav.Link>
+          </Link>
+          <Link to={"/Shop"} style={{ textDecoration: "none" }}>
+            <Nav.Link href="/Shop">Store</Nav.Link>
+          </Link>
+          <Link to={"/Cart"} style={{ textDecoration: "none" }}>
+            <Nav.Link href="/Cart">Cart({cart.length})</Nav.Link>
+          </Link>
         </Nav>
       </Container>
     </Navbar>

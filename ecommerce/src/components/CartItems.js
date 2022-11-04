@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { ProductPage } from "./ProductPage";
 
-export default function CartItems({ cart, setCart }) {
-  const removeFromCart = (productToRemove) => {
-    setCart(cart.filter((product) => product !== productToRemove));
-  };
-
+export default function CartItems({ cart, removeFromCart }) {
   function emptyMessage() {
     if (cart.length === 0) {
       return { __html: "Nothing to see here" };
