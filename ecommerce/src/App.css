@@ -17,25 +17,26 @@ button {
   width: 30vw;
 }
 
-/* .homeContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 100vh;
-} */
-
-/* .innerContainer {
-  width: 80%;
-} */
-
 @media (max-width: 700px) {
   .homePage {
     background-image: url(./components/img/makishimota.JPG);
     height: 100vh;
     background-position: center;
     background-size: cover;
+  }
+
+  .shop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cartTotal {
+    width: 80vw;
+  }
+
+  .cartCard {
+    width: 60vw;
   }
 }
 
@@ -46,10 +47,19 @@ button {
     background-position: center;
     background-size: cover;
   }
-}
 
-.shopNow:focus {
-  outline: none;
+  .shop-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    margin-top: 5%;
+    row-gap: 3em;
+  }
+
+  .productTitle {
+    font-size: 2.3vw;
+  }
 }
 
 .product-image {
@@ -63,15 +73,6 @@ button {
   padding: 2px;
 }
 
-.shop-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  justify-items: center;
-  margin-top: 5%;
-  row-gap: 3em;
-}
-
 .productPrice {
   display: flex;
   justify-content: center;
@@ -80,12 +81,6 @@ button {
 }
 
 @media (max-width: 600px) {
-  .shop-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .shopCard {
     width: 50vw;
   }
@@ -95,13 +90,6 @@ button {
   .shopCard {
     width: 30vw;
   }
-}
-
-.cardBody {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .productCardContainer {

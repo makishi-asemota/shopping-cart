@@ -28,42 +28,46 @@ export default function CartItems({ cart, removeFromCart }) {
             lg={4}
             className="d-flex flex-column align-items-center itemTotal"
           >
-            <div className="card text-white bg-warning mb-3">
+            <div className="cartTotal card text-white bg-warning mb-3">
               <div className="card-header">Cart</div>
               <div className="card-body">
-                <h5 className="card-title">Total: ${getTotal()}</h5>
+                <h5 className="card-title text-center">Total: ${getTotal()}</h5>
                 <p
-                  className="card-text"
+                  className="card-text text-center"
                   dangerouslySetInnerHTML={emptyMessage()}
                 ></p>
               </div>
             </div>
           </Col>
 
-          <Col sm={8} lg={8} className="cartItems">
-            <Stack gap={3}>
+          <Col sm={8} md={8} lg={8} className="cartItems">
+            <Stack gap={3} className="d-flex flex-column align-items-center">
               {cart.map((product, idx) => (
-                <div key={idx} className="card mb-3 border border-warning">
+                <div
+                  key={idx}
+                  className="cartCard card mb-3 border border-warning"
+                >
                   <div className="row g-0">
                     <div className="col-md-4">
                       <img
                         src={product.src}
-                        class="img-fluid rounded-start"
+                        className=" img-fluid rounded-start"
                         alt={product.name}
                       ></img>
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 ">
                       <div className="card-body">
-                        <h5 className="card-title text-warning">
+                        <h5 className="card-title text-warning text-center fw-bold pt-lg-5">
                           {product.name}
                         </h5>
-                        <p className="card-text">{product.description}</p>
-                        <Button
-                          variant="danger"
-                          onClick={() => removeFromCart(product)}
-                        >
-                          Remove
-                        </Button>
+                        <div className="text-center pt-lg-5">
+                          <Button
+                            variant="danger"
+                            onClick={() => removeFromCart(product)}
+                          >
+                            Remove
+                          </Button>
+                        </div>
                       </div>
                     </div>
                   </div>

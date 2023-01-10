@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { ProductData } from "../ProductImages";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Card from "react-bootstrap/Card";
 import "bootstrap/dist/css/bootstrap.css";
 
 export default function ProductPage({ cart, addToCart }) {
@@ -12,7 +11,6 @@ export default function ProductPage({ cart, addToCart }) {
     return prod.id == id;
   });
 
-  const [message, setMessage] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => setShowModal(false);
@@ -21,11 +19,6 @@ export default function ProductPage({ cart, addToCart }) {
     let itemInCart = cart.find((item) => product.name === item.name);
     if (itemInCart) {
       setShowModal(true);
-    } else {
-      setMessage(true);
-      setTimeout(function () {
-        setMessage(false);
-      }, 3000);
     }
   };
 
@@ -41,14 +34,21 @@ export default function ProductPage({ cart, addToCart }) {
             ></img>
           </div>
           <div className="col-md-8">
-            <div className="card-body productCardBody">
-              <div className="productPrice">
-                <h5 className="card-title text-warning">{thisProduct.name}</h5>
-                <h5 className="card-title ">${thisProduct.price}</h5>
+            <div className="card-body bg-warning productCardBody">
+              <div className="productPrice bg-warning">
+                <h5 className="productTitle card-title bg-warning text-dark fw-bold mb-lg-4">
+                  {thisProduct.name}
+                </h5>
+                <h5 className="productTitle card-title bg-warning text-dark fw-bold">
+                  ${thisProduct.price}
+                </h5>
               </div>
-              <p className="card-text">{thisProduct.description}</p>
+              <p className="card-text bg-warning text-dark fw-semibold">
+                {thisProduct.description}
+              </p>
               <Button
-                variant="primary"
+                variant="dark"
+                className="mt-lg-5"
                 onClick={() => {
                   addToCart(thisProduct);
                   addMessage(thisProduct);
